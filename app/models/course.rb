@@ -19,4 +19,7 @@ class Course < ApplicationRecord
   # Validations
   validates :title, presence: true
   validates :description, presence: true, length: { minimum: 5 }
+
+  # Relationships
+  belongs_to :user
 end

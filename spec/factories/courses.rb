@@ -10,7 +10,7 @@
 #
 FactoryBot.define do
   factory :course do
-    title { FFaker::Book.title }
-    description { FFaker::Lorem.paragraphs(rand(1..2)).join }
+    title { Faker::Educator.course_name }
+    description { Faker::TvShows::GameOfThrones.quote }
   end
 end

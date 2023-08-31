@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'benchmark'
+
+time = Benchmark.realtime do
+
+  # Course
+  Course.destroy_all
+  FactoryBot.create_list(:course, 30)
+end
