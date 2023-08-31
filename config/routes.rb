@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   # Application
   root to: 'home#index'
+  resources :users, only: [:index]
   resources :courses
 end

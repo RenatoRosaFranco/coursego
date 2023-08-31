@@ -4,14 +4,18 @@
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
-      %li.nav-item
+      %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
         %a.nav-link{:href => root_path }
           .fas.fa-home
           Home
-      %li.nav-item
+      %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
         %a.nav-link{:href => courses_path }
           .fas.fa-book
           Courses
+      %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+        = link_to users_path, class: 'nav-link' do
+          .fa.fa-user
+          Users
       %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
         = link_to new_course_path, class: 'nav-link' do
           .fa.fa-plus

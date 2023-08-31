@@ -2,22 +2,21 @@
 
 class CoursesController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: %i[show edit update destroy]
 
   # GET /courses
   # GET /courses.json
   def index
-    if params[:title]
-      @courses = Course.where('title LIKE ?', "%#{params[:title]}%")
-    else
-      @courses = Course.all
-    end
+    @courses = if params[:title]
+                 Course.where('title LIKE ?', "%#{params[:title]}%")
+               else
+                 Course.all
+               end
   end
 
   # GET /courses/1
   # GET /courses/1.json
-  def show
-  end
+  def show; end
 
   # GET /courses/new
   def new
@@ -25,8 +24,7 @@ class CoursesController < ApplicationController
   end
 
   # GET /courses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /courses
   # POST /courses.json
@@ -69,13 +67,14 @@ class CoursesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_course
-      @course = Course.friendly.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def course_params
-      params.require(:course).permit(:title, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_course
+    @course = Course.friendly.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def course_params
+    params.require(:course).permit(:title, :description)
+  end
 end
