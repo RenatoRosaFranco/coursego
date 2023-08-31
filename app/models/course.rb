@@ -4,6 +4,7 @@
 #
 #  id          :integer          not null, primary key
 #  description :text
+#  slug        :string
 #  title       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -11,6 +12,7 @@
 #
 # Indexes
 #
+#  index_courses_on_slug     (slug) UNIQUE
 #  index_courses_on_user_id  (user_id)
 #
 # Foreign Keys
@@ -18,6 +20,9 @@
 #  user_id  (user_id => users.id)
 #
 class Course < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: [:slugged]
+
   # Properties
   self.table_name  = 'courses'
   self.primary_key = 'id'

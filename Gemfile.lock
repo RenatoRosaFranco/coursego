@@ -130,6 +130,8 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
+    friendly_id (5.5.0)
+      activerecord (>= 4.0.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.1.2)
@@ -384,6 +386,7 @@ DEPENDENCIES
   faker
   ffaker
   font-awesome-sass (~> 5.12.0)
+  friendly_id
   haml-rails
   image_processing (~> 1.2)
   importmap-rails

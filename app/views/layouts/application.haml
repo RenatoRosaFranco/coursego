@@ -12,8 +12,8 @@
     = javascript_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_importmap_tags
   %body{class: "#{controller.controller_name}"}
-    = render partial: 'shared/banner'
     = render partial: 'layouts/header'
+    = render partial: 'shared/banner'
     .container
       = yield
     = render partial: 'layouts/footer'
