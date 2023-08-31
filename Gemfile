@@ -72,6 +72,8 @@ group :development, :test do
   gem 'shoulda'
   gem 'faker'
   gem 'ffaker'
+  gem 'mailcatcher'
+  gem 'letter_opener'
 end
 
 group :development do
