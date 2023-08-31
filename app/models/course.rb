@@ -2,13 +2,17 @@
 #
 # Table name: courses
 #
-#  id          :integer          not null, primary key
-#  description :text
-#  slug        :string
-#  title       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  user_id     :integer
+#  id                :integer          not null, primary key
+#  description       :text
+#  language          :string           default("English"), not null
+#  level             :string           default(NULL), not null
+#  price             :integer          default(0), not null
+#  short_description :text
+#  slug              :string
+#  title             :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  user_id           :integer
 #
 # Indexes
 #
@@ -27,11 +31,14 @@ class Course < ApplicationRecord
   self.table_name  = 'courses'
   self.primary_key = 'id'
 
+  # Enum
+  enum level: %i[Beginner Intermediate Advanced Expert]
+
   # Trix
   has_rich_text :description
 
   # Validations
-  validates :title, presence: true
+  validates :title, :short_description, :language, :price, :level, presence: true
   validates :description, presence: true, length: { minimum: 5 }
 
   # Relationships
