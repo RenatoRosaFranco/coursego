@@ -6,3 +6,5 @@ import "controllers"
 $(function(){
 
 });
+import "trix"
+import "@rails/actiontext"
