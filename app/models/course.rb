@@ -9,13 +9,14 @@
 #  updated_at  :datetime         not null
 #
 class Course < ApplicationRecord
-
   # Properties
   self.table_name  = 'courses'
   self.primary_key = 'id'
 
+  # Trix
+  has_rich_text :description
+
   # Validations
   validates :title, presence: true
-  validates :description, presence: true,
-                          length: { minimum: 5 }
+  validates :description, presence: true, length: { minimum: 5 }
 end

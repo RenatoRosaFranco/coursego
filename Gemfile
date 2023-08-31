@@ -61,6 +61,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'rails_best_practices'
+  gem 'better_errors'
   gem 'rubocop'
   gem 'simplecov'
   gem 'factory_bot_rails'
