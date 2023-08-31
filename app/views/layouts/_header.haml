@@ -13,8 +13,12 @@
           .fas.fa-book
           Courses
     %form.form-inline.my-2.my-lg-0
-      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+      = form_tag(courses_path, method: :get) do
+        .input-group
+          = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+          %span.input-group-append
+            %button.btn.btn-primary.btn-sm{:type => "submit"}
+              %span.fa.fa-search{"aria-hidden" => "true"}
     %ul.navbar-nav.mr-right
       %li.nav-item
       - if current_user
