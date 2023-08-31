@@ -1,4 +1,5 @@
-# This migration comes from action_text (originally 20180528164100)
+# frozen_string_literal: true
+
 class CreateActionTextTables < ActiveRecord::Migration[6.0]
   def change
     # Use Active Record's configured type for primary and foreign keys
