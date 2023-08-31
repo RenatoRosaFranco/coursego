@@ -1,0 +1,15 @@
+%html
+  %head
+    %meta{charset:'UTF-8'}
+    %title Coursego | #{yield :title}
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}
+    %meta{name: 'viewport', value: 'width=device-width, initial-scale=1.0'}
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_importmap_tags
+  %body{class: "#{controller.controller_name}"}
+    = render partial: 'layouts/header'
+    = yield
+    = render partial: 'layouts/footer'
