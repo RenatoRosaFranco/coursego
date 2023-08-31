@@ -34,6 +34,11 @@ gem "redis", "~> 4.0"
 # gem "kredis"
 gem 'haml-rails'
 gem 'simple_form'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.12.0'
+gem 'sass-rails'
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
