@@ -13,4 +13,9 @@ class Course < ApplicationRecord
   # Properties
   self.table_name  = 'courses'
   self.primary_key = 'id'
+
+  # Validations
+  validates :title, presence: true
+  validates :description, presence: true,
+                          length: { minimum: 5 }
 end
